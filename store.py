@@ -19,9 +19,13 @@ bill = 0
 new_items = list(map(int,input("enter basket of items:").split()))
 print('product name'.ljust(20),'quantity'.ljust(40),'price')
 new_items1 = list(set(new_items))
+gst = 18
 for i in new_items1:
     quantity = new_items.count(i)
     print(grocery[i-1]["products"].ljust(20),str(quantity).ljust(40),grocery[i-1]['price']*quantity)
     bill += grocery[i-1]["price"]* quantity
+    gst_amount = (bill*gst)/100
+    finalbill= bill +gst_amount
 print(str(bill).center(30))
+print(f"you bill with gst:{str(finalbill).center(30)}")
 print ("thank you chossing our! please vist again without failure!")
